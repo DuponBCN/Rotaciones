@@ -27,6 +27,28 @@
   --muted2:#8b96a8;
   --yellow:#f0e060;
 }
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCmAKvk6eP1AUD31W7W13Q32z8mi8seeyk",
+  authDomain: "rotaciones-09.firebaseapp.com",
+  databaseURL: "https://rotaciones-09-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "rotaciones-09",
+  storageBucket: "rotaciones-09.firebasestorage.app",
+  messagingSenderId: "662007915029",
+  appId: "1:662007915029:web:c3b5109c12cf976513a41c",
+  measurementId: "G-GXD9D74CF2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
 /* ── LAYOUT ── */
