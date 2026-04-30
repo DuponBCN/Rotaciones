@@ -49,6 +49,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = { /* tu config */ };
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function guardarDato() {
+    await addDoc(collection(db, "rotaciones"), {
+      valor: 123,
+      fecha: new Date()
+    });
+    alert("Guardado en Firebase");
+  }
+
+  window.guardarDato = guardarDato;
+</script>
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
 /* ── LAYOUT ── */
